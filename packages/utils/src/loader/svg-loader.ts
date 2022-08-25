@@ -66,6 +66,7 @@ const extractSafeSVG = async (response: Response | undefined): Promise<SVGElemen
     const svg = svgDocument.firstElementChild;
     if (svg instanceof SVGElement) {
       stripUnsafeNodes(svg);
+      // eslint-disable-next-line no-console
       console.log('stripUnsafeNodes', svg);
       return svg;
     }
