@@ -38,8 +38,7 @@ describe('icon/Icon', () => {
       console.log('tickSvg', tickSvg);
       const el = await createAndWaitForLoad(`<ef-icon icon="${iconName}"></ef-icon>`);
       const svg = el.shadowRoot.querySelector('svg');
-      console.log('svg', svg);
-      console.log('svg.outerHTML', svg.outerHTML);
+
       expect(svg).to.not.equal(null, 'SVG element should exist for valid icon attribute');
       expect(svg.outerHTML).to.equal(tickSvg, 'Should render SVG, from the server response');
     });
@@ -48,7 +47,8 @@ describe('icon/Icon', () => {
       createFakeResponse(tickSvg, responseConfigSuccess);
       const el = await createAndWaitForLoad('<ef-icon src="https://mock.cdn.com/icons/ticks.svg"></ef-icon>');
       const svg = el.shadowRoot.querySelector('svg');
-
+      console.log('svg', svg);
+      console.log('svg.outerHTML', svg.outerHTML);
       expect(svg).to.not.equal(null, 'SVG element should exist for valid src attribute');
       expect(svg.outerHTML).to.equal(tickSvg, 'Should render SVG, from the server response');
     });
