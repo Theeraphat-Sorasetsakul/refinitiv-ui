@@ -7,6 +7,7 @@ const { hideBin } = require('yargs/helpers');
 const { PACKAGES_ROOT, errorHandler } = require('./scripts/helpers');
 
 # test 01
+# test 02
 const argvNoBin = hideBin(process.argv);
 const argv = yargs(argvNoBin)
   .command('$0 <reflect> <package>', 'reflect the command', yargs => {
